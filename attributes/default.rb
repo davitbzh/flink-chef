@@ -5,10 +5,10 @@ default['flink']['user']                             = node['install']['user'].e
 default['flink']['user_id']                          = '1510'
 default['flink']['user-home']                        = "/home/#{node['flink']['user']}"
 
-default['flink']['version_base']                     = "1.9"
-default['flink']['version_bugfix']                   = "2.1"
+default['flink']['version_base']                     = "1.13"
+default['flink']['version_bugfix']                   = "2"
 default['flink']['version']                          = node['flink']['version_base'] + "." + node['flink']['version_bugfix']
-default['flink']['scala_version']                    = "2.11"
+default['flink']['scala_version']                    = "2.12"
 
 default['flink']['dir']                              = node['install']['dir'].empty? ? "/srv" : node['install']['dir']
 default['flink']['base_dir']                         = "#{node['flink']['dir']}/flink"
