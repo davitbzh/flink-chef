@@ -240,6 +240,22 @@ end
 #   action :create
 # end
 
+
+template "#{node['flink']['base_dir']}/conf/sql-client-defaults.yaml" do
+    source "sql-client-defaults.yaml.erb"
+    owner node['flink']['user']
+    group node['hops']['group']
+    mode 0644
+end
+
+template "#{node['flink']['base_dir']}/conf/logback-yarn.xml" do
+    source "logback-yarn.xml.erb"
+    owner node['flink']['user']
+    group node['hops']['group']
+    mode 0644
+end
+
+
 link "#{node['flink']['home']}/flink.jar" do
     owner node['flink']['user']
     group node['hops']['group']
